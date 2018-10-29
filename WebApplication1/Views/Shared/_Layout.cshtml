@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Song List Builder</title>
+     @Styles.Render("~/Content/Site.css")
+
+    <!-- @Scripts.Render("~/bundles/modernizr") -->
+
+        <!--<link href="@Url.Content("~/Content/css")" rel="stylesheet" type="text/css" />-->
+
+        <!--@RenderSection("Styles", false)-->
+
+</head>
+<body>
+    <div class="navbar" style="flexbar">
+        <div>
+            <p>Developed by Sean Leonard</p>
+            <p>Email: sdvpl2011@gmail.com</p>
+        </div>
+        <center>
+            <div><img src="data:image/png;base64,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" width="210" height="90" /> </div>
+        </center>
+    </div>
+
+    <center>
+        <p>Build a list of songs and save it as an excel file.</p>
+        <p>Start by searching for an Artist/Band in the textbox below to display their Discography.</p>
+        <p>Then to view the songs on a release click "View Tracklist".</p>
+        <p>You can then add a song to the song list by clicking "Add to List".</p>
+        <p>To view your song list press the View Song List Button below.</p>
+        <p>You can then export the song list as an excel file (.xls) by clicking the Export button below.</p>
+    </center><br />
+
+
+    <div class="btn-group">
+        <!-- @Model WebApplication1.Models.ArtistSearch -->
+        @using (Html.BeginForm("Find", "AlbumTables", FormMethod.Post))
+        {
+        //@Html.TextBox("Search")
+
+        <input type="text" id="artistname" name="artistname">
+        <input type="submit" name="SearchButton" value="Search" />
+        //@Html.Action("Find","Search");
+        //<h1>@Html.GetSomething()</h1>
+    }
+</div>
+    <br />
+<div class="btn-group">
+
+    @using (Html.BeginForm("BackToAlbumSearch", "AlbumTables"))
+    {
+        <input type="submit" name="BackToAlbumSearchButton" value="Back To Album Search" />
+    }
+
+    @using (Html.BeginForm("ViewTrackList", "AlbumTables"))
+    {
+        <input type="submit" name="ViewTrackListButton" value="Back To TrackList" />
+    }
+
+    @using (Html.BeginForm("ViewSongList", "AlbumTables"))
+    {
+        <input type="submit" name="ViewSongListButton" value="View Song List" />
+    }
+
+    @using (Html.BeginForm("ExportToExcel", "AlbumTables"))
+    {
+        <input type="submit" name="ExportButton" value="Export" />
+    }
+</div>
+
+<div class="btn-group">
+    @using (Html.BeginForm("ClearAlbumSearch", "AlbumTables"))
+    {
+        <input type="submit" name="ClearAlbumSearchButton" value="Clear Album Search" />
+    }
+
+    @using (Html.BeginForm("ClearTracklist", "AlbumTables"))
+    {
+        <input type="submit" name="ClearTracklistButton" value="Clear Track List" />
+    }
+
+    @using (Html.BeginForm("ClearSongList", "AlbumTables"))
+    {
+        <input type="submit" name="ClearSongListButton" value="Clear Song List" />
+    }
+</div>
+
+    <div class="container body-content">
+
+        @RenderBody()
+        <hr />
+        <footer>
+            <center>
+                <p>Created by Sean Leonard: sdvpl2011@gmail.com | <a href="http://www.linkedin.com/in/sean-leonard-418201136">www.linkedin.com/in/sean-leonard-418201136</a></p>
+            </center>
+            <center><p>You can alternatively Download the Desktop App (.exe) <a href="https://github.com/sdvpl/SongList/raw/master/SongList.exe ">here</a>.</p></center>
+            <center><p>The code for this project can viewed at <a href="https://github.com/sdvpl/">https://github.com/sdvpl</a></p></center>
+            <center>
+                <p>Powered by: </p>
+            </center>
+            <center>
+                <p><img src="data:image/png;base64,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" /></p>
+            </center>
+        </footer>
+    </div>
+
+
+
+
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

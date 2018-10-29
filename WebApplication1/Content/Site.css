@@ -1,0 +1,99 @@
+﻿body {
+    background-color: #000;
+    padding-top: 5px;
+    /*padding-bottom: 20px;*/
+    color: lime;
+    font:bold;
+
+}
+
+p {
+    line-height: 5px; /* within paragraph */
+    margin-bottom: 5px; /* between paragraphs */
+}
+
+a{
+    color: blue;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    /*padding-right: 15px;*/
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+font-face{
+    font-family: Century;
+    font-style: normal;
+    font-size: large;
+    font: bold;
+}
+
+.navbar {
+    display: grid;
+    grid-template-columns: 250px auto 250px;
+    /*grid-template-rows: 25% 100px auto;*/
+}
+
+.navbar > div {
+    /*width: 500px;*/
+    margin: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    /*border: solid blue 10px;*/
+    /*padding: 20px;*/
+}
+
+.flexbar {
+    display: inline-block;
+    vertical-align: middle;
+}
+    .flexbar > div {
+        margin: 5px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+
+input[type=text] {
+    width: 50%;
+    /*padding: 10px 20px;*/
+    /*margin: 10px 0;*/
+    box-sizing: border-box;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    /*padding: 10px 24px; /* Some padding */
+    /*float: left; /* Float the buttons side by side */
+}
+
+table {
+    background-color: white;
+    color: black;
+    border: 1px  solid black;
+    border-collapse: collapse;
+    text-align: left;
+    font:bold;
+}
+
+/*table tr td:first-of-type {
+    background-color: purple;
+}*/

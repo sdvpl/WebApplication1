@@ -1,0 +1,47 @@
+﻿@model IEnumerable<WebApplication1.Models.TrackList>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/Site.css")
+    <title>TrackList</title>
+</head>
+<body>
+    <br />
+    <table class="table" border="1" cellpadding="2" style="width:100%">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ArtistName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReleaseName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrackName)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ArtistName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReleaseName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TrackName)
+                </td>
+                <td>
+                    @Html.ActionLink("Add To List", "AddToSongList", new {artistname = item.ArtistName, albumname = item.ReleaseName, Trackname = item.TrackName, id = item.TrackID })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>
